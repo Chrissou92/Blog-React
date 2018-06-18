@@ -31,11 +31,7 @@
     "react-dom": "^16.4.1"
   },
   "scripts": {
-  "start": "brunch watch --server",
-  "build": "brunch build --production",
-  "lint": "eslint .",
-  "lint:fix": "eslint --fix .",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
+    "build": "brunch build",
+    "start": "brunch watch --server"
+  }
 }

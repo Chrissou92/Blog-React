@@ -8,6 +8,7 @@ import { render } from 'react-dom';
 * local import
 */
 import Blog from 'src/components/Blog';
+
 /*
 * Code
 */

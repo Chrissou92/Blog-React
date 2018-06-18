@@ -2,6 +2,7 @@
 * Npm import
 */
 import React from 'react';
+import PropTypes from 'prop-types';
 /*
 * local import
 */
@@ -9,11 +10,16 @@ import React from 'react';
 /*
 * Code
 */
-const Header = () => (
+const Header = ({ categories }) => (
   <header id="header">
-    Liste des catégories
+    {categories.map(category => (
+      <a key={category} className="header-category">{category}</a>
+    ))}
   </header>
 );
+Header.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+};
 /*
 * Export
 */
