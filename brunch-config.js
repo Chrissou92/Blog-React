@@ -1,18 +1,24 @@
-exports.config = {
+module.exports = {
   files: {
+    javascripts: {
+      joinTo: 'js/app.js'
+    },
     stylesheets: {
       joinTo: 'css/app.css',
       order: {
-        before: 'app/styles/reset.css',
-      },
-    },
-    javascripts: {
-      joinTo: 'js/app.js',
-    },
+        after: [ 'styles/styles.scss']
+      }
+    }
   },
   plugins: {
-    postcss: {
-      processors: [require('autoprefixer')],
+    sass: {
+      mode: 'native',
+      options: {
+        includePaths: ['node_modules/bulma', 'app/src/components']
+      }
     },
-  },
-};
+    postcss: {
+      processors: [require('autoprefixer')]
+    }
+  }
+}

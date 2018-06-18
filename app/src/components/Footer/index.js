@@ -9,11 +9,17 @@ import React from 'react';
 /*
 * Code
 */
-const Footer = () => (
-  <footer id="footer">
-    pied de page
-  </footer>
-);
+const Footer = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  return (
+    <footer id="footer">
+      <p >
+        &#169;Christelle Nicol -{year}
+      </p>
+    </footer>
+  );
+};
 /*
 * Export
 */

@@ -1,36 +1,41 @@
 {
-  "name": "React-E04-modele-react-v2",
+  "name": "blog-react",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "",
-  "author": "Maxime Vasse <maxime@oclock.io>",
+  "repository": "git@github.com:Chrissou92/Blog-React.git",
+  "author": "Chrissou <nicolchristelle@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "auto-reload-brunch": "*",
-    "autoprefixer": "*",
-    "babel-brunch": "https://github.com/babel/babel-brunch",
-    "babel-eslint": "*",
+    "auto-reload-brunch": "^2.7.1",
+    "autoprefixer": "^8.6.2",
+    "babel-brunch": "https://github.com/babel/babel-brunch.git",
+    "babel-eslint": "^8.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-react": "*",
-    "brunch": "*",
-    "eslint": "*",
-    "eslint-config-airbnb": "*",
-    "eslint-import-resolver-node": "*",
-    "eslint-plugin-import": "*",
-    "eslint-plugin-jsx-a11y": "*",
-    "eslint-plugin-react": "*",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "brunch": "^2.10.12",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
     "postcss-brunch": "0.5.0",
-    "stylus-brunch": "*"
+    "stylus-brunch": "^2.10.0"
   },
   "dependencies": {
-    "babel-polyfill": "*",
-    "prop-types": "*",
-    "react": "*",
-    "react-dom": "*"
+    "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "scripts": {
-    "build": "brunch build",
-    "start": "brunch watch --server"
-  }
+  "start": "brunch watch --server",
+  "build": "brunch build --production",
+  "lint": "eslint .",
+  "lint:fix": "eslint --fix .",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
 }
