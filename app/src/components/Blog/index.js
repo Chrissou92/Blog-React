@@ -11,13 +11,14 @@ import Footer from 'src/components/Footer';
 
 // Datas
 import categories from 'src/datas/categories';
+import posts from 'src/datas/posts';
 /*
 * Code
 */
 const Blog = () => (
   <Fragment>
     <Header categories={categories} />
-    <Posts />
+    <Posts posts={posts} />
     <Footer />
   </Fragment>
 );
