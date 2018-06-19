@@ -23,26 +23,32 @@ class Blog extends React.Component {
   * state initial
    */
   state = {
-    selectedCategory: 'Front',
+    selectedCategory: 'Accueil',
   }
   /*
   * Action
   */
-  handleClick =() => {
-    this.setState({
-      selectedCategory: 'React',
-    });
+  handleClick = selectedCategory => () => {
+    this.setState({ selectedCategory });
   }
   /*
   * Render
    */
   render() {
+    const { selectedCategory } = this.state;
+
     const selectedPosts = posts.filter(post => (
-      post.category === this.state.selectedCategory
+      post.category === selectedCategory
+      ||
+      selectedCategory === 'Accueil'
     ));
+
     return (
-      <div id="blog" onClick={this.handleClick}>
-        <Header categories={categories} />
+      <div id="blog">
+        <Header
+          categories={categories}
+          onCategoryClick={this.handleClick}
+        />
         <Posts posts={selectedPosts} />
         <Footer />
       </div>

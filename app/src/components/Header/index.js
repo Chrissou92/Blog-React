@@ -10,15 +10,22 @@ import PropTypes from 'prop-types';
 /*
 * Code
 */
-const Header = ({ categories }) => (
+const Header = ({ categories, onCategoryClick }) => (
   <header id="header">
     {categories.map(category => (
-      <a key={category} className="header-category">{category}</a>
+      <a
+        key={category}
+        className="header-category"
+        onClick={onCategoryClick(category)}
+      >
+        {category}
+      </a>
     ))}
   </header>
 );
 Header.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  onCategoryClick: PropTypes.func.isRequired,
 };
 /*
 * Export
