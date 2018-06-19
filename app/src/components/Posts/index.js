@@ -19,7 +19,9 @@ const Posts = ({ posts }) => (
   </main>
 );
 Posts.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired).isRequired,
 };
 /*
 * Export
